@@ -13,17 +13,15 @@ class ticketCommand extends Command {
             .addStringOption(option => 
             option
                 .setName('reason')
-                .setDescription('Provide a reason to open a ticket')
-                .setRequired(true))
+                .setDescription('Provide a reason to open a ticket [24 to 1024 char.]')
+                .setRequired(true)
+                .setMaxLength(1024)
+                .setMinLength(24))
+
     );
     };
 
     async chatInputRun(interaction) {
-        if (interaction.options.getString('reason').length >= 1024) {
-            await interaction.reply({content: 'Your reason is too long! Limit: 1024 symbols.', ephemeral: true})
-            return;
-        }
-
         const interactionUser = await interaction.guild.members.fetch(interaction.user.id)
 
         let channel = await interaction.guild.channels.create({
