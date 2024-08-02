@@ -1,7 +1,7 @@
 const { Command } = require('@sapphire/framework');
 const { PermissionsBitField, ChannelType, EmbedBuilder } = require('discord.js');
 
-class ticketCommand extends Command {
+class TicketCommand extends Command {
     constructor (context, options) {
         super(context, { ...options });
     };
@@ -54,5 +54,5 @@ class ticketCommand extends Command {
     };
 };
 module.exports = {
-    ticketCommand
+    TicketCommand
 };
