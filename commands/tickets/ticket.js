@@ -38,7 +38,7 @@ class ticketCommand extends Command {
                 }
             ]
         });
-        
+
         const reason = interaction.options.getString('reason')
         const embed = new EmbedBuilder()
             .setAuthor({name: `Welcome ${interactionUser.user.username}`})
