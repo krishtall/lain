@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 dotenv.config();
-
+ 
 const token = process.env.TOKEN;
 
 const { SapphireClient } = require('@sapphire/framework');
