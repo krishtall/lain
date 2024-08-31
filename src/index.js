@@ -11,7 +11,9 @@ const client = new SapphireClient({
 		GatewayIntentBits.GuildMessages,
 		GatewayIntentBits.GuildMembers,
 		GatewayIntentBits.MessageContent,
-		GatewayIntentBits.DirectMessages]
+		GatewayIntentBits.DirectMessages,
+		GatewayIntentBits.GuildBans
+	]
 });
 
 client.login(token);

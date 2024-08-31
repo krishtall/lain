@@ -23,8 +23,8 @@ class ClearCommand extends Command {
         const amount = interaction.options.getInteger('amount');
 
         const messages = await interaction.channel.messages.fetch({
-        limit: amount + 1,
-        cache: false
+            limit: amount + 1,
+            cache: false
     });
 
     const embed = new EmbedBuilder()
