@@ -26,12 +26,12 @@ class BanCommand extends Command {
     };
 
     async chatInputRun(interaction) {
-        const member = interaction.guild.members.cache.get(interaction.options.getUser('user').id)
+        const member = interaction.guild.members.cache.get(interaction.options.getMember('user').id)
         const reason = interaction.options.getString('reason') ?? 'Not provided'
 
         const embed  = new EmbedBuilder()
             .setTitle('User is banned!')
-            .setDescription(`User ${interaction.options.getUser('user')} has been banned.
+            .setDescription(`User ${interaction.options.getMember('user')} has been banned.
 Reason: ${reason}`)
     
         await member.ban({reason: reason})
