@@ -32,7 +32,7 @@ class ModalHandler extends InteractionHandler {
 
         const user = await interaction.client.users.fetch(dmUserId);
 
-        await interaction.user.send({
+        await user.send({
             embeds: [embed]
         });
 
