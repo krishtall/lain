@@ -22,10 +22,7 @@ class ClearCommand extends Command {
     async chatInputRun(interaction) {
         const amount = interaction.options.getInteger('amount');
 
-        const messages = await interaction.channel.messages.fetch({
-            limit: amount + 1,
-            cache: false
-    });
+        const messages = await interaction.channel.messages.fetch({ limit: amount + 1, cache: false });
 
     const embed = new EmbedBuilder()
         .setTitle('Messages have been purged!')
@@ -38,12 +35,9 @@ class ClearCommand extends Command {
     await interaction.reply({embeds: [embed], ephemeral: false});
 
     setTimeout(async () => {
-        if (interaction.replied) { 
-            await interaction.deleteReply();
-        }
-    }, 10000);
+        if (interaction.replied) { await interaction.deleteReply() }}, 10000);
 }
 };
 module.exports = {
     ClearCommand
-}
+};
